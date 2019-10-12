@@ -29,7 +29,3 @@ alias ru='rome upload --platform iOS --cache-prefix Swift-`xcrun swift -version 
 
 alias spm='swift package'
 alias spm_release='swift build --static-swift-stdlib --configuration release'
-
-notify() {
-  osascript -e "display notification \"$1\""
-}
