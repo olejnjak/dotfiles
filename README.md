@@ -15,3 +15,5 @@ This repository contains two scripts
 If you want to use those scripts just download or clone this repo and run them.
 
 ## License
+
+dotfiles are available under the MIT license. See the LICENSE file for more info.
