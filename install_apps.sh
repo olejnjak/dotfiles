@@ -7,7 +7,7 @@
 # 1176895641 - Spart
 APP_STORE_APP_IDS=(1114498254 1147396723 803453959 497799835 1176895641)
 BREW_PACKAGES=("carthage" "mas")
-BREW_CASKS=("abstract" "bloomrpc" "daisydisk" "postman" "simpholders" "sourcetree" "spotify" "visual-studio-code" "vlc")
+BREW_CASKS=("abstract" "bloomrpc" "daisydisk" "postman" "simpholders" "sketch" "sourcetree" "spotify" "visual-studio-code" "vlc")
 
 # This is not exactly a dotfile, but running this script will install most used apps
 
