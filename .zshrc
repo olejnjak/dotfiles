@@ -23,9 +23,16 @@ alias fru='bundle exec fastlane rome_upload'
 alias pi='pod install'
 alias pu='pod update'
 
-alias rd='rome download --platform iOS --cache-prefix Swift-`xcrun swift -version | cut -f4 -d" "`'
-alias rlm='rome list --missing --platform iOS --cache-prefix Swift-`xcrun swift -version | cut -f4 -d" "`'
-alias ru='rome upload --platform iOS --cache-prefix Swift-`xcrun swift -version | cut -f4 -d" "`'
+export ROME_PREFIX="Swift-`xcrun swift -version | cut -f4 -d\" \"`"
+export USER_ROME_PREFIX="${USER}_${ROME_PREFIX}"
+
+alias rd='rome download --platform iOS --cache-prefix "$USER_ROME_PREFIX"'
+alias rlm='rome list --missing --platform iOS --cache-prefix "$USER_ROME_PREFIX"'
+alias ru='rome upload --platform iOS --cache-prefix "$USER_ROME_PREFIX"'
+
+alias rd_global='rome download --platform iOS --cache-prefix "$ROME_PREFIX"'
+alias rlm_global='rome list --missing --platform iOS --cache-prefix "$ROME_PREFIX"'
+alias ru_global='rome upload --platform iOS --cache-prefix "$ROME_PREFIX"'
 
 alias spm='swift package'
 alias spm_release='swift build --static-swift-stdlib --configuration release'
