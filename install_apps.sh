@@ -4,7 +4,7 @@
 # 1147396723 - Whatsapp
 # 803453959 - Slack
 # 497799835 - Xcode
-# 1176895641 - Spart
+# 1176895641 - Spark
 APP_STORE_APP_IDS=(1114498254 1147396723 803453959 497799835 1176895641)
 BREW_PACKAGES=("carthage" "mas")
 BREW_CASKS=("abstract" "bloomrpc" "daisydisk" "postman" "simpholders" "sketch" "sourcetree" "spotify" "visual-studio-code" "vlc")
