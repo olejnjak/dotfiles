@@ -41,3 +41,7 @@ alias ru_global='rome upload --platform iOS --cache-prefix `rome_prefix`'
 
 alias spm='swift package'
 alias spm_release='swift build --static-swift-stdlib --configuration release'
+
+alias te='tuist edit'
+alias tg='tuist generate'
+alias tgx='tuist generate && xed .'

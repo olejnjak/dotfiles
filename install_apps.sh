@@ -44,5 +44,9 @@ echo "👷 Installing Homebrew casks: $BREW_CASKS"
 brew cask install $BREW_CASKS
 echo "✅ Homebrew casks installed"
 
+# install custom stuff
+echo "👷 Installing Tuist:"
+bash <(curl -Ls https://install.tuist.io)
+
 echo ""
 echo "🎉 All apps installed successfully ✅"
