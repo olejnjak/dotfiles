@@ -5,14 +5,6 @@ export FASTLANE_SKIP_UPDATE_CHECK=1
 export DELIVER_USERNAME='jakub.olejnik@ackee.cz'
 export PILOT_USERNAME="$DELIVER_USERNAME"
 
-rome_prefix {
-    printf Swift-`xcrun swift -version | cut -f4 -d\" \"`
-}
-
-user_rome_prefix {
-    printf ${USER}"_"`rome_prefix()`
-}
-
 alias be='bundle exec'
 alias bef='bundle exec fastlane'
 alias bepi='bundle exec pod install'
@@ -31,13 +23,21 @@ alias fru='bundle exec fastlane rome_upload'
 alias pi='pod install'
 alias pu='pod update'
 
-alias rd='rome download --platform iOS --cache-prefix `user_rome_prefix`'
-alias rlm='rome list --missing --platform iOS --cache-prefix `user_rome_prefix`'
-alias ru='rome upload --platform iOS --cache-prefix `user_rome_prefix`'
+rome_prefix ()  {
+    echo -n "Swift-`xcrun swift -version | cut -f4 -d\" \"`"    
+}
 
-alias rd_global='rome download --platform iOS --cache-prefix `rome_prefix`'
-alias rlm_global='rome list --missing --platform iOS --cache-prefix `rome_prefix`'
-alias ru_global='rome upload --platform iOS --cache-prefix `rome_prefix`'
+user_rome_prefix() {
+    echo -n "${USER}_`rome_prefix`"
+}
+
+alias rd='rome download --platform iOS --cache-prefix "`user_rome_prefix`"'
+alias rlm='rome list --missing --platform iOS --cache-prefix "`user_rome_prefix`"'
+alias ru='rome upload --platform iOS --cache-prefix "`user_rome_prefix`"'
+
+alias rd_global='rome download --platform iOS --cache-prefix "`rome_prefix`"'
+alias rlm_global='rome list --missing --platform iOS --cache-prefix "`rome_prefix`"'
+alias ru_global='rome upload --platform iOS --cache-prefix "`rome_prefix`"'
 
 alias spm='swift package'
 alias spm_release='swift build --static-swift-stdlib --configuration release'
