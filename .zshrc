@@ -5,6 +5,8 @@ export FASTLANE_SKIP_UPDATE_CHECK=1
 export DELIVER_USERNAME='jakub.olejnik@ackee.cz'
 export PILOT_USERNAME="$DELIVER_USERNAME"
 
+setopt rmstarsilent
+
 alias be='bundle exec'
 alias bef='bundle exec fastlane'
 alias bepi='bundle exec pod install'
